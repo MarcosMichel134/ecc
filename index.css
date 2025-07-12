@@ -13,8 +13,15 @@ h1 {
 }
 
 nav {
-    background: rgba(255, 165, 0);
+    background: rgb(114, 111, 245);
     padding: 10px;
+    position: fixed; /* Épingler la barre */
+    top: 0;          /* Coller en haut */
+    left: 0;         /* Aligner à gauche */
+    width: 100%;     /* Prendre toute la largeur */
+    z-index: 1000;   /* S'assurer qu'elle est au-dessus des autres éléments */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Ombre légère */
+
 }
 
 nav ul {
@@ -26,13 +33,27 @@ nav ul {
 }
 
 nav li {
-    margin: 0 15px;
+    margin: 0 1px;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 5px; 
+    background-color: blanchedalmond;
 } 
+
+nav a {
+    text-decoration: none; 
+    color: black; 
+    font-weight: 700;
+} 
+
+nav a:hover {
+    color: rgb(114, 111, 245);
+}
 
 .content {
     justify-content: center;
     align-items: center; 
-    text-align: center;
+    text-align: center; 
 } 
 
 main {
@@ -41,32 +62,6 @@ main {
     align-items: center; 
     text-align: center;
 }
-
-
-/* #cantique1 {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    text-align: center;
-    background-image: url('path/to/cross-pattern.png');
-    background-size: cover; 
-    height: 40vh; 
-    display: block;
-    margin-bottom: 1em;
-    position: relative
-} 
-
-#cantique2 {
-    background: rgba(255, 255, 255, 0.9);
-    padding: 20px;
-    text-align: center;
-    background-image: url('path/to/cross-pattern.png');
-    background-size: cover; 
-    height: 40vh; 
-     display: block;
-    margin-bottom: 1em; 
-    position:relative; 
-} */
-
 
 
 
