@@ -7,7 +7,7 @@ main {
 
 .container {
     display: flex;
-    height: 55vh; 
+    height: auto; 
 }
 
 .column {
@@ -32,4 +32,26 @@ h3{
 
 h2 {
     color: blue;
+}
+
+/* Version mobile (écrans < 768px) */
+@media (max-width: 767px) {
+  body {
+    font-size: 14px; /* Taille de texte réduite */
+  }
+
+  .container {
+    width: 100%; /* Pleine largeur */
+    padding: 0 15px; /* Marge intérieure */
+  }
+
+  /* Masquer un élément sur mobile */
+  .desktop-only {
+    display: none;
+  }
+
+  /* Afficher un menu hamburger */
+  .mobile-menu {
+    display: block;
+  }
 }
