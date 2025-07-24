@@ -1,57 +1,155 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="index.css">
-    <title>Chorale de l'Église</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Page avec Barre de Navigation Modernisée</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* Custom gradient background animation for navbar */
+    @keyframes shiny-gradient {
+      0% {
+        background-position: 0% 50%;
+      }
+      50% {
+        background-position: 100% 50%;
+      }
+      100% {
+        background-position: 0% 50%;
+      }
+    }
+
+    * {
+        font-family: Arial, Helvetica, sans-serif
+    } 
+
+    body {
+      /* font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+      background: linear-gradient(135deg, #e9700e, #1faae0, #ecc412);
+      background-size: 600% 600%;
+      animation: shiny-gradient 15s ease infinite;
+      min-height: 100vh;
+      margin: 0;
+      color: #eee;
+    }
+
+    nav {
+      background: linear-gradient(270deg, #f72a7f, #e09136, #f56679, #dd600c);
+      background-size: 800% 800%;
+      animation: shiny-gradient 20s ease infinite;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      backdrop-filter: saturate(180%) blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+      padding: 1rem 0;
+      margin: 0;
+      list-style-type: none;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    nav ul li {
+      position: relative; 
+      /* margin: 0 5px 0 5px; */
+    }
+
+    nav ul li a {
+      display: flex;
+      padding: 0.65rem 1.5rem;
+      font-weight: 600;
+      color: #f3e9ff;
+      background: rgba(255 255 255 / 0.15);
+      border-radius: 0.5rem;
+      border: 2px solid transparent;
+      text-shadow: 0 0 10px rgba(255 255 255 / 0.4);
+      box-shadow: 0 0 5px rgba(255 255 255 / 0.2);
+      transition: 
+        background-color 0.3s ease,
+        border-color 0.3s ease,
+        color 0.3s ease,
+        box-shadow 0.3s ease;
+      user-select: none;
+    }
+
+    nav ul li a:hover,
+    nav ul li a:focus {
+      background: rgba(255 255 255 / 0.5);
+      border-color: #fff;
+      color: #4a00e0;
+      box-shadow: 0 0 12px #fff, 0 0 20px #4a00e0;
+      outline: none;
+    }
+
+    nav ul li a:active {
+      background: #fff;
+      color: #260126;
+      box-shadow: none;
+    }
+
+    /* Responsive wrapping for smaller screens */
+    @media (max-width: 640px) {
+      nav ul {
+        justify-content: space-around;
+      }
+      nav ul li a {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+      }
+    }
+
+    /* Main content style for demonstration */
+    section {
+      width: 1200px;
+      margin: 2rem auto 1rem auto;
+      margin-top: 0px;
+      padding: 0 1rem;
+      background: rgba(14, 10, 10, 0.6);
+      border-radius: 1rem;
+      box-shadow: 0 0 15px rgba(255 255 255 / 0.15);
+      text-align: center;
+      color:white;
+      font-size: 1.35rem;
+      user-select: none;
+    }
+  </style>
 </head>
 <body>
-    <!-- <header>
-        <h1>CHORALE "LES CHERUBINS CELESTES DE L'ETERNEL DIEU"</h1>
-    </header> -->
-    <nav>
-        <ul>
-            <li><a href="index.html">Acceuil</a></li>
-            <li><a href="cant1.html">Cantique 1</a></li>
-            <li><a href="cant2.html">Cantique 2</a></li>
-            <li><a href="cant3.html">Cantique 3</a></li>
-            <li><a href="cant4.html">Cantique 4</a></li>
-            <li><a href="text1.html">Texte 1</a></li>
-            <li><a href="cant5.html">Cantique 5</a></li>
-            <li><a href="text2.html">Texte 2</a></li>
-            <li><a href="cant6.html">Cantique 6</a></li>
-            <li><a href="ann.html">Annonce</a></li>
-            <li><a href="prog.html">Programme</a></li>
-            <li><a href="cant7.html">Cantique 7</a></li>
-        </ul>
-    </nav>
-    <main>
-        <div class="container"; style="font-size: 30px; margin-top: 8%;">
-            <h1> 
-                I.   <br>         
-                Ki La o wi, Ki la o o so,<br>
-                Ki la o wi, Ki la o so,<br>
-                Ijo Mimo ki la o so,<br>
-                Gbati Baba ba pe wa o,<br>
-                Pe omo siwo ko ma bo,<br>
-                Wa siro ise owo re.<br><br>
+  <nav aria-label="Navigation principale">
+    <ul role="menubar">
+      <li role="none"><a role="menuitem" href="prog.html" tabindex="-1">Programme</a></li>
+      <!-- <li role="none"><a role="menuitem" href="index.html" tabindex="0">Accueil</a></li> -->
+      <li role="none"><a role="menuitem" href="cant1.html" tabindex="-1">Cant 1</a></li>
+      <li role="none"><a role="menuitem" href="cant2.html" tabindex="-1">Cant 2</a></li>
+      <li role="none"><a role="menuitem" href="cant3.html" tabindex="-1">Cant 3</a></li>
+      <li role="none"><a role="menuitem" href="cant4.html" tabindex="-1">Cant 4</a></li>
+      <li role="none"><a role="menuitem" href="text1.html" tabindex="-1">Texte 1</a></li>
+      <li role="none"><a role="menuitem" href="cant5.html" tabindex="-1">Cant 5</a></li>
+      <li role="none"><a role="menuitem" href="tex2.html" tabindex="-1">Texte 2</a></li>
+      <li role="none"><a role="menuitem" href="cant6.html" tabindex="-1">Cant 6</a></li>
+      <li role="none"><a role="menuitem" href="ann.html" tabindex="-1">Annonce</a></li>
+      <li role="none"><a role="menuitem" href="cant7.html" tabindex="-1">Cant 7</a></li>
+    </ul>
+  </nav>
 
-                II.<br>
-                Ki la wi, arakunrin,<br>
-                Ki la o wi, arabirin,<br>
-                Ijo mimo ki la o so,<br>
-                Gbati baba ba pe wa o,<br>
-                Pe omo si owo ko ma bo,<br>
-                Wa siro ise owo ro.<br>
-                Amin.
+  <main>
+    <section>
+        <div class="container"; style="font-size: 70px; margin-top: 2%;">
+            <h1>            
+                Seigneur, que Ta Bonté est immense <br>
+                Tes miracles sont nombreux. <br>
+                Souffle ton Saint Esprit sur nous <br>
+                Afin que le monde tremble. <br>
+                Allé - Alléluia - Alléluia (bis) <br>
+                (Amen)
             </h1>
         </div>
-    </main>
-    <!-- <footer>
-        <p>Contactez-nous : <a href="mailto:email@example.com">cherubinscelestes134@gmail.com</a> | Téléphone : 01 96 18 52 19</p>
-    </footer> -->
-    <script src="../../Acceuil/index.js"></script>
+    </section>
+  </main>
 </body>
 </html>
