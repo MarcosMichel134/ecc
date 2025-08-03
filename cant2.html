@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />  <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Page avec Barre de Navigation Modernisée</title>
   <script src="https://cdn.tailwindcss.com"></script>
@@ -42,8 +42,21 @@
       position: sticky;
       top: 0;
       z-index: 50;
-    }
+      height : 90px;
+      display: flex; 
+      justify-content: space-between;
+      padding: 0 5%;
+      border-radius: 0 0 20px 20px;
+    } 
 
+    nav .logo {
+      font-size: 30px;
+      font-weight: 900;
+    }
+    
+    nav span {
+      color :blue;
+    }
     nav ul {
       display: flex;
       justify-content: center;
@@ -69,11 +82,10 @@
       border: 2px solid transparent;
       text-shadow: 0 0 10px rgba(255 255 255 / 0.4);
       box-shadow: 0 0 5px rgba(255 255 255 / 0.2);
-      transition: 
-        background-color 0.3s ease,
-        border-color 0.3s ease,
-        color 0.3s ease,
-        box-shadow 0.3s ease;
+      background-color : 0.3s ease;
+      border-color : 0.3s ease;
+      color : 0.3s ease;
+      box-shadow : 0.3s ease;
       user-select: none;
     }
 
@@ -91,6 +103,35 @@
       color: #260126;
       box-shadow: none;
     } 
+
+    .dropdown_menu {
+      display : none;
+    }
+
+    nav ul li:hover .dropdown_menu {
+      display : block;
+      position : absolute;
+      left : 0;
+      top : 100%; 
+      background: linear-gradient(270deg, #f72a7f, #e09136, #f56679, #dd600c);
+      background-size: 800% 800%;
+      animation: shiny-gradient 20s ease infinite;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      backdrop-filter: saturate(180%) blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 50; 
+      padding : 0 10px;
+      border-radius: 10px;
+    } 
+    nav ul li:hover .dropdown_menu ul {
+      display : block;
+      margin: 5px;
+    } 
+
+    nav ul li:hover .dropdown_menu ul li {
+      padding : 5px 0;      
+    }
 
         /* Main content style for demonstration */
     section {
@@ -110,12 +151,15 @@
 
     /* Responsive wrapping for smaller screens */
     @media (max-width: 768px) {
+      nav .logo {
+      font-size: 14px;
+    }
       nav ul {
         justify-content: center;
       }
       nav ul li a {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
+        padding: 0.15rem 0.5rem;
+        font-size: 0.6rem;
       } 
       section {
         width: 360px;
@@ -127,27 +171,38 @@
         font-size: 23px ;
         margin-bottom: 15px;
       }
-    }
+    } 
 
   </style>
 </head>
 <body>
   <nav aria-label="Navigation principale">
+    <h1 class="logo">LES CHERUBINS CELESTES <span>(LCC)</span> <br> DE L'ETERNEL DIEU</h1>
+
     <ul role="menubar">
-      <li role="none"><a role="menuitem" href="prog.html" tabindex="-1">Programme</a></li>
+      <li role="none"><a role="menuitem" href="prog.html" tabindex="-1">PROGRAMME</a></li>
       <!-- <li role="none"><a role="menuitem" href="index.html" tabindex="0">Accueil</a></li> -->
-      <li role="none"><a role="menuitem" href="cant1.html" tabindex="-1">Cant 1</a></li>
-      <li role="none"><a role="menuitem" href="cant2.html" tabindex="-1">Cant 2</a></li>
-      <li role="none"><a role="menuitem" href="cant3.html" tabindex="-1">Cant 3</a></li>
-      <li role="none"><a role="menuitem" href="cant4.html" tabindex="-1">Cant 4</a></li>
-      <li role="none"><a role="menuitem" href="text1.html" tabindex="-1">Texte 1</a></li>
-      <li role="none"><a role="menuitem" href="cant5.html" tabindex="-1">Cant 5</a></li>
-      <li role="none"><a role="menuitem" href="text2.html" tabindex="-1">Texte 2</a></li>
-      <li role="none"><a role="menuitem" href="cant6.html" tabindex="-1">Cant 6</a></li>
-      <li role="none"><a role="menuitem" href="ann.html" tabindex="-1">Annonce</a></li>
-      <li role="none"><a role="menuitem" href="cant7.html" tabindex="-1">Cant 7</a></li>
+      <li role="none">
+        <a role="menuitem" href="#" tabindex="-1">CANTIQUES <i class="fa fa-caret-down"></i></a>
+
+        <div class="dropdown_menu">
+          <ul role="menubar">
+            <li role="none"><a role="menuitem" href="cant1.html" tabindex="-1">CANTIQUE 1</a></li>
+            <li role="none"><a role="menuitem" href="cant2.html" tabindex="-1">CANTIQUE 2</a></li>
+            <li role="none"><a role="menuitem" href="cant3.html" tabindex="-1">CANTIQUE 3</a></li>
+            <li role="none"><a role="menuitem" href="cant4.html" tabindex="-1">CANTIQUE 4</a></li>
+            <li role="none"><a role="menuitem" href="cant5.html" tabindex="-1">CANTIQUE 5</a></li>
+            <li role="none"><a role="menuitem" href="cant6.html" tabindex="-1">CANTIQUE 6</a></li>
+            <li role="none"><a role="menuitem" href="cant7.html" tabindex="-1">CANTIQUE 7</a></li>
+          </ul>
+        </div>
+      </li>
+      <!-- <li role="none"><a role="menuitem" href="text1.html" tabindex="-1">Texte 1</a></li> -->
+      <!-- <li role="none"><a role="menuitem" href="text2.html" tabindex="-1">Texte 2</a></li> -->
+      <li role="none"><a role="menuitem" href="ann.html" tabindex="-1">ANNONCE</a></li>
     </ul>
   </nav>
+
 
   <main>
     <section style="margin-top: 2%;">
@@ -199,4 +254,5 @@
   </main>
 </body>
 </html>
+
 
