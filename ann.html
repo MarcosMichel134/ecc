@@ -1,8 +1,10 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />  <meta charset="UTF-8" />
+  
+<link rel="stylesheet" href="colonne.css">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Page avec Barre de Navigation Modernisée</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <style>
@@ -42,8 +44,21 @@
       position: sticky;
       top: 0;
       z-index: 50;
-    }
+      height : 90px;
+      display: flex; 
+      justify-content: space-between;
+      padding: 0 5%;
+      border-radius: 0 0 20px 20px;
+    } 
 
+    nav .logo {
+      font-size: 30px;
+      font-weight: 900;
+    }
+    
+    nav span {
+      color :blue;
+    }
     nav ul {
       display: flex;
       justify-content: center;
@@ -69,11 +84,10 @@
       border: 2px solid transparent;
       text-shadow: 0 0 10px rgba(255 255 255 / 0.4);
       box-shadow: 0 0 5px rgba(255 255 255 / 0.2);
-      transition: 
-        background-color 0.3s ease,
-        border-color 0.3s ease,
-        color 0.3s ease,
-        box-shadow 0.3s ease;
+      background-color : 0.3s ease;
+      border-color : 0.3s ease;
+      color : 0.3s ease;
+      box-shadow : 0.3s ease;
       user-select: none;
     }
 
@@ -90,20 +104,38 @@
       background: #fff;
       color: #260126;
       box-shadow: none;
+    } 
+
+    .dropdown_menu {
+      display : none;
     }
 
-    /* Responsive wrapping for smaller screens */
-    @media (max-width: 640px) {
-      nav ul {
-        justify-content: space-around;
-      }
-      nav ul li a {
-        padding: 0.5rem 1rem;
-        font-size: 0.9rem;
-      }
+    nav ul li:hover .dropdown_menu {
+      display : block;
+      position : absolute;
+      left : 0;
+      top : 100%; 
+      background: linear-gradient(270deg, #f72a7f, #e09136, #f56679, #dd600c);
+      background-size: 800% 800%;
+      animation: shiny-gradient 20s ease infinite;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+      backdrop-filter: saturate(180%) blur(10px);
+      position: sticky;
+      top: 0;
+      z-index: 50; 
+      padding : 0 10px;
+      border-radius: 10px;
+    } 
+    nav ul li:hover .dropdown_menu ul {
+      display : block;
+      margin: 5px;
+    } 
+
+    nav ul li:hover .dropdown_menu ul li {
+      padding : 5px 0;      
     }
 
-    /* Main content style for demonstration */
+        /* Main content style for demonstration */
     section {
       width: 1200px;
       margin: 2rem auto 1rem auto;
@@ -114,70 +146,93 @@
       box-shadow: 0 0 15px rgba(255 255 255 / 0.15);
       text-align: center;
       color:white;
-      font-size: 2rem;
+      font-size: 1.35rem;
       user-select: none;
-      font-weight : 900;
     } 
 
-    h2 {
-        text-decoration : underline;
-        text-transform : uppercase;
-        color : #e09136;
-    }
-
-    .container {
-        display: flex;
-        height: 55vh; 
-    }
-
-    .column {
-        padding: 20px 0 0 0;
-        box-sizing: border-box;
-    }
-
-    .left-column {
-        flex: 1;
-    }
-
-    .right-column { 
-        flex: 1;
+        section h2 {
+      font-size: 30px; 
+      text-decoration: underline;
+      font-weight: 700;
     } 
+    section h3 {
+      font-size: 30px;
+      font-weight: 700;
+    }
+
+
+
+    /* Responsive wrapping for smaller screens */
+    @media (max-width: 768px) {
+      nav .logo {
+      font-size: 14px;
+    }
+      nav ul {
+        justify-content: center;
+      }
+      nav ul li a {
+        padding: 0.15rem 0.5rem;
+        font-size: 0.6rem;
+      } 
+      section {
+        width: 360px;
+      }
+      section .container {
+        width: 345px;
+      }
+      section h1 {
+        font-size: 23px ;
+        margin-bottom: 15px;
+      }
+    } 
+
   </style>
 </head>
 <body>
   <nav aria-label="Navigation principale">
+    <h1 class="logo">LES CHERUBINS CELESTES <span>(LCC)</span> <br> DE L'ETERNEL DIEU</h1>
+
     <ul role="menubar">
-      <li role="none"><a role="menuitem" href="prog.html" tabindex="-1">Programme</a></li>
+      <li role="none"><a role="menuitem" href="prog.html" tabindex="-1">PROGRAMME</a></li>
       <!-- <li role="none"><a role="menuitem" href="index.html" tabindex="0">Accueil</a></li> -->
-      <li role="none"><a role="menuitem" href="cant1.html" tabindex="-1">Cant 1</a></li>
-      <li role="none"><a role="menuitem" href="cant2.html" tabindex="-1">Cant 2</a></li>
-      <li role="none"><a role="menuitem" href="cant3.html" tabindex="-1">Cant 3</a></li>
-      <li role="none"><a role="menuitem" href="cant4.html" tabindex="-1">Cant 4</a></li>
-      <li role="none"><a role="menuitem" href="text1.html" tabindex="-1">Texte 1</a></li>
-      <li role="none"><a role="menuitem" href="cant5.html" tabindex="-1">Cant 5</a></li>
-      <li role="none"><a role="menuitem" href="text2.html" tabindex="-1">Texte 2</a></li>
-      <li role="none"><a role="menuitem" href="cant6.html" tabindex="-1">Cant 6</a></li>
-      <li role="none"><a role="menuitem" href="ann.html" tabindex="-1">Annonce</a></li>
-      <li role="none"><a role="menuitem" href="cant7.html" tabindex="-1">Cant 7</a></li>
+      <li role="none">
+        <a role="menuitem" href="#" tabindex="-1">CANTIQUES <i class="fa fa-caret-down"></i></a>
+
+        <div class="dropdown_menu">
+          <ul role="menubar">
+            <li role="none"><a role="menuitem" href="cant1.html" tabindex="-1">CANTIQUE 1</a></li>
+            <li role="none"><a role="menuitem" href="cant2.html" tabindex="-1">CANTIQUE 2</a></li>
+            <li role="none"><a role="menuitem" href="cant3.html" tabindex="-1">CANTIQUE 3</a></li>
+            <li role="none"><a role="menuitem" href="cant4.html" tabindex="-1">CANTIQUE 4</a></li>
+            <li role="none"><a role="menuitem" href="cant5.html" tabindex="-1">CANTIQUE 5</a></li>
+            <li role="none"><a role="menuitem" href="cant6.html" tabindex="-1">CANTIQUE 6</a></li>
+            <li role="none"><a role="menuitem" href="cant7.html" tabindex="-1">CANTIQUE 7</a></li>
+          </ul>
+        </div>
+      </li>
+      <!-- <li role="none"><a role="menuitem" href="text1.html" tabindex="-1">Texte 1</a></li> -->
+      <!-- <li role="none"><a role="menuitem" href="text2.html" tabindex="-1">Texte 2</a></li> -->
+      <li role="none"><a role="menuitem" href="ann.html" tabindex="-1">ANNONCE</a></li>
     </ul>
   </nav>
 
   <main>
-    <section>
-        <h2 style="margin-top: 3%;"><b>THEME DE LA SEMAINE PROCHAINE :</b></h2>
-        <h3>PLACE ET ROLE DE LA JEUNESSE DANS L'EGLISE</h3> <br><hr>
+    <section style="margin-top: 2%; padding: 10px 10px 0 10px;">
+        <h2 style="margin-top: 2%;"><b>THEME DE LA SEMAINE PROCHAINE :</b></h2>
+        <h3>CHRETIEN, COMMENT ATTEINDRE TES OBJECTIFS MALGRE LES OBSTACLES ? <br> LE CAS DE JOSEPH
+        </h3> <br><hr>
         <div class="container">
             <div class="column left-column">
                 <h2><b>MERCREDI SOIR</b> </h2>
-                <h3>PROVERBES 7 : 1 - 5</h3> <br>
+                <h3>GENESE 39 : 7 - 14</h3> <br>
                 <h2><b>VENDREDI SOIR </b></h2>
-                <h3> 1 TIMOTHEE 5 : 1 - 4</h3>
+                <h3>GENESE 40 : 11 - 15</h3>
             </div>        
             <div class="column right-column">
                 <h2><b>DIMANCHE MATIN</b></h2>
-                <h3>JOSUE 1 : 6 - 79 <br> JEAN 2 : 12 - 17</h3>
+                <h3>GENESE 37 : 17 - 27 <br> MATHIEU 4 : 1 - 11</h3>
                 <h2><b>DIMANCHE SOIR</b></h2>
-                <h3>1 TIMOTHEE 4 : 11 - 16</h3>
+                <h3>GENESE 41 : 25 - 33</h3>
             </div>
         </div>
     </section>
