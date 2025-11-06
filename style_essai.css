@@ -1,0 +1,386 @@
+/* Styles pour la barre de recherche */
+.search-container {
+  display: flex;
+  align-items: center;
+}
+
+.search-box {
+  display: flex;
+  align-items: center;
+  background: rgba(255 255 255 / 0.15);
+  border-radius: 0.5rem;
+  border: 2px solid transparent;
+  box-shadow: 0 0 5px rgba(255 255 255 / 0.2);
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.search-box:focus-within {
+  background: rgba(255 255 255 / 0.5);
+  border-color: #fff;
+  box-shadow: 0 0 12px #fff, 0 0 20px #4a00e0;
+}
+
+#cantique-search {
+  background: transparent;
+  border: none;
+  padding: 0.65rem 1rem;
+  color: #f3e9ff;
+  font-weight: 600;
+  width: 180px;
+  outline: none;
+  font-size: 1rem;
+}
+
+#cantique-search::placeholder {
+  color: rgba(243, 233, 255, 0.7);
+}
+
+#search-btn {
+  background: transparent;
+  border: none;
+  padding: 0.65rem 1rem;
+  color: #f3e9ff;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#search-btn:hover {
+  color: #4a00e0;
+}
+
+/* Custom gradient background animation for navbar */
+@keyframes shiny-gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  background-size: 700% 700%;
+  animation: shiny-gradient 15s ease infinite;
+  min-height: 100vh;
+  margin: 0;
+  color: #eee;
+  overflow: hidden; /* Empêche le défilement traditionnel */
+}
+
+nav {
+  background: linear-gradient(270deg, #f72a7f, #e09136, #f56679, #dd600c);
+  background-size: 800% 800%;
+  animation: shiny-gradient 20s ease infinite;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  backdrop-filter: saturate(180%) blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  height: 90px;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 5%;
+  border-radius: 0 0 20px 20px;
+}
+
+nav .logo {
+  font-size: 30px;
+  font-weight: 900;
+  margin-top: 25px;
+}
+
+nav span {
+  color: blue;
+}
+nav ul {
+  display: flex;
+  justify-content: center;
+  padding: 1rem 0;
+  margin: 0;
+  list-style-type: none;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  display: flex;
+  padding: 0.65rem 1.5rem;
+  font-weight: 600;
+  color: #f3e9ff;
+  background: rgba(255 255 255 / 0.15);
+  border-radius: 0.5rem;
+  border: 2px solid transparent;
+  text-shadow: 0 0 10px rgba(255 255 255 / 0.4);
+  box-shadow: 0 0 5px rgba(255 255 255 / 0.2);
+  background-color: 0.3s ease;
+  border-color: 0.3s ease;
+  color: 0.3s ease;
+  box-shadow: 0.3s ease;
+  user-select: none;
+}
+
+nav ul li a:hover,
+nav ul li a:focus {
+  background: rgba(255 255 255 / 0.5);
+  border-color: #fff;
+  color: #4a00e0;
+  box-shadow: 0 0 12px #fff, 0 0 20px #4a00e0;
+  outline: none;
+}
+
+nav ul li a:active {
+  background: #fff;
+  color: #260126;
+  box-shadow: none;
+}
+
+.dropdown_menu {
+  display: none;
+}
+
+nav ul li:hover .dropdown_menu {
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 100%;
+  background: linear-gradient(270deg, #f72a7f, #e09136, #f56679, #dd600c);
+  background-size: 800% 800%;
+  animation: shiny-gradient 20s ease infinite;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  backdrop-filter: saturate(180%) blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  padding: 0 10px;
+  border-radius: 10px;
+}
+nav ul li:hover .dropdown_menu ul {
+  display: block;
+  margin: 5px;
+}
+
+nav ul li:hover .dropdown_menu ul li {
+  padding: 5px 0;
+}
+
+/* Main content style for demonstration */
+main {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 90px); /* Hauteur totale moins la navbar */
+  overflow: hidden;
+}
+
+/* main::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: url("lcc.jpg") center/cover no-repeat;
+      transform: scale(1); 
+      z-index: -1;
+    }*/
+
+/* Styles pour le défilement progressif */
+.scrolling-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+section {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 1200px;
+  margin: 2rem auto 1rem auto;
+  margin-top: 0px;
+  padding: 2px 1rem;
+  background: rgba(189, 181, 181, 0.6);
+  border-radius: 1rem;
+  box-shadow: 0 0 15px rgba(255 255 255 / 0.15);
+  text-align: center;
+  font-size: 40px;
+  user-select: none;
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s ease, transform 0.8s ease;
+  left: 50%;
+  transform: translateX(-50%) translateY(30px);
+  z-index: 1;
+}
+
+section.active {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  z-index: 2;
+}
+
+section.previous {
+  opacity: 0;
+  transform: translateX(-50%) translateY(-30px);
+  z-index: 1;
+}
+
+section .container h1,
+section .container h2 {
+  color: black;
+}
+
+/* Indicateur de progression */
+.progress-indicator {
+  position: fixed;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  z-index: 100;
+}
+
+.progress-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+}
+
+.progress-dot.active {
+  background-color: white;
+  transform: scale(1.3);
+}
+
+/* Boutons de navigation */
+.navigation-buttons {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 20px;
+  z-index: 100;
+}
+
+.nav-btn {
+  padding: 12px 30px;
+  background: linear-gradient(135deg, #f72a7f, #e09136);
+  color: white;
+  border: none;
+  border-radius: 50px;
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease;
+}
+
+.nav-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.nav-btn:active {
+  transform: translateY(1px);
+}
+
+.nav-btn:disabled {
+  background: rgba(255, 255, 255, 0.3);
+  color: rgba(255, 255, 255, 0.7);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.instructions {
+  position: fixed;
+  bottom: 90px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.7);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 14px;
+  text-align: center;
+  z-index: 100;
+}
+
+/* Responsive wrapping for smaller screens */
+@media (max-width: 768px) {
+  nav .logo {
+    font-size: 14px;
+    margin-top: 20px;
+  }
+  nav ul {
+    justify-content: center;
+  }
+  nav ul li a {
+    padding: 0.15rem 0.5rem;
+    font-size: 0.6rem;
+  }
+  section {
+    width: 360px;
+    font-size: 23px;
+  }
+  section .container {
+    width: 345px;
+  }
+  section h1,
+  section h3 {
+    font-size: 23px;
+    margin-bottom: 15px;
+  }
+  .progress-indicator {
+    right: 10px;
+  }
+  .instructions {
+    font-size: 12px;
+    width: 90%;
+    bottom: 80px;
+  }
+  .navigation-buttons {
+    bottom: 20px;
+  }
+  .nav-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+  }
+}
+
+/* Styles responsifs pour la barre de recherche */
+@media (max-width: 768px) {
+  .search-box {
+    width: 150px;
+  }
+
+  #cantique-search {
+    width: 100px;
+    padding: 0.15rem 0.5rem;
+    font-size: 0.6rem;
+  }
+
+  #search-btn {
+    padding: 0.15rem 0.5rem;
+  }
+
+  #cantique-search::placeholder {
+    font-size: 0.6rem;
+  }
+}
