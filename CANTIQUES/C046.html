@@ -1,3 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head> 
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />  
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Page avec Barre de Navigation Modernisée</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="style_essai.css" />
+</head>
+<body>
+  <nav aria-label="Navigation principale">
+    <h1 class="logo">LES CHERUBINS CELESTES <span>(LCC)</span></h1>
+
+    <ul role="menubar">
+      <li role="none"><a role="menuitem" href="prog.html" tabindex="-1">PROGRAMME</a></li>
+      <!-- <li role="none"> 
+        <a role="menuitem" href="#" tabindex="-1">CANTIQUES <i class="fa fa-caret-down"></i></a>
+
+        <div class="dropdown_menu">
+          <ul role="menubar">
+            <li role="none"><a role="menuitem" href="cant1.html" tabindex="-1">CANTIQUE 1</a></li>
+            <li role="none"><a role="menuitem" href="cant2.html" tabindex="-1">CANTIQUE 2</a></li>
+            <li role="none"><a role="menuitem" href="cant3.html" tabindex="-1">CANTIQUE 3</a></li>
+            <li role="none"><a role="menuitem" href="cant4.html" tabindex="-1">CANTIQUE 4</a></li>
+            <li role="none"><a role="menuitem" href="cant5.html" tabindex="-1">CANTIQUE 5</a></li>
+            <li role="none"><a role="menuitem" href="cant6.html" tabindex="-1">CANTIQUE 6</a></li>
+            <li role="none"><a role="menuitem" href="cant7.html" tabindex="-1">CANTIQUE 7</a></li>
+          </ul>
+        </div>
+      </li> -->
+      <li role="none" class="search-container">
+        <div class="search-box">
+          <input type="number" id="cantique-search" placeholder="Rechercher un cantique..." min="1" />
+          <button id="search-btn">
+            <i class="fas fa-search"></i>
+          </button>
+        </div>
+      </li>
+    </ul>
+  </nav>
+
   <main>
     <div class="scrolling-container" id="scrolling-container">
         <section style="margin-top: 2%;" class="active">
@@ -38,3 +80,7 @@
       <button class="nav-btn" id="nextBtn">Suivant</button>
     </div>
   </main>
+
+  <script src="script_essai.js"></script>
+</body>
+</html>
