@@ -108,5 +108,21 @@
     </div>
   </main>
   <script src="../script_essai.js"></script>
+      <script>
+      // Fonction pour effectuer la recherche
+  function performSearch() { 
+    const cantiqueNumber = searchInput.value.trim();
+    
+    if (cantiqueNumber && !isNaN(cantiqueNumber) && cantiqueNumber > 0) {
+      // Rediriger vers la page du cantique correspondant
+      window.location.href = `C${cantiqueNumber}.html`;
+    } else {
+      // Afficher un message d'erreur si le numéro n'est pas valide
+      alert('Veuillez entrer un numéro de cantique valide');
+      searchInput.focus();
+    }
+  }
+    </script>
+
 </body>
 </html>
