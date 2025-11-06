@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     if (cantiqueNumber && !isNaN(cantiqueNumber) && cantiqueNumber > 0) {
       // Rediriger vers la page du cantique correspondant
-      window.location.href = `../CANTIQUE/C${cantiqueNumber}.html`;
+      window.location.href = `../CANTIQUES/C${cantiqueNumber}.html`;
     } else {
       // Afficher un message d'erreur si le numéro n'est pas valide
       alert('Veuillez entrer un numéro de cantique valide');
