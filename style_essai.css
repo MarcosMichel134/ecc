@@ -339,14 +339,14 @@ font-size : 30px
   }
   section {
     width: 360px;
-    font-size: 23px;
+    font-size: 20px;
   }
   section .container {
     width: 345px;
   }
   section h1,
   section h3 {
-    font-size: 23px;
+    font-size: 20px;
     margin-bottom: 15px;
   }
   .progress-indicator {
