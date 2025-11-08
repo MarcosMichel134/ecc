@@ -339,13 +339,14 @@ font-size : 30px
   }
   section {
     width: 360px;
-    font-size: 20px;
+    /*font-size: 20px;*/
   }
   section .container {
     width: 345px;
   }
-  section h1,
-  section h3 {
+  section .container h1,
+section .container h2
+  section .container h3 {
     font-size: 20px;
     margin-bottom: 15px;
   }
