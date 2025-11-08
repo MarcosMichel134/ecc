@@ -241,7 +241,7 @@ section .container h2,
 section .container h3, 
 section .container h4 {
   color : black; 
-font-size : 5px;
+font-size : 45px;
 }
 
 /* Indicateur de progression */
