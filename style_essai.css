@@ -110,7 +110,7 @@ nav ul {
   margin: 0;
   list-style-type: none;
   flex-wrap: wrap;
-  gap: 2.5rem;
+  gap: 4rem;
 }
 
 nav ul li {
