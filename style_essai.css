@@ -24,12 +24,12 @@
 #cantique-search {
   background: transparent;
   border: none;
-  padding: 0.65rem 1rem;
+  padding: 0.7rem 1rem;
   color: #f3e9ff;
   font-weight: 600;
   width: 180px;
   outline: none;
-  font-size: 1rem;
+  font-size: 2rem;
 }
 
 #cantique-search::placeholder {
