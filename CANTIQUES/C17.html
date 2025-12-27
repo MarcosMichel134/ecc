@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Page avec Barre de Navigation Modernisée</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../style_essai.css" />
+    <style>
+      nav ul li.search-container {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <nav aria-label="Navigation principale">
+      <h1 class="logo">LES CHERUBINS CELESTES <span>(LCC)</span></h1>
+
+      <ul role="menubar">
+        <li role="none">
+          <a role="menuitem" href="../index.html" tabindex="-1"
+            >PROGRAMME</a
+          >
+        </li>
+        <!-- <li role="none"> 
+        <a role="menuitem" href="#" tabindex="-1">CANTIQUES <i class="fa fa-caret-down"></i></a>
+
+        <div class="dropdown_menu">
+          <ul role="menubar">
+            <li role="none"><a role="menuitem" href="cant1.html" tabindex="-1">CANTIQUE 1</a></li>
+            <li role="none"><a role="menuitem" href="cant2.html" tabindex="-1">CANTIQUE 2</a></li>
+            <li role="none"><a role="menuitem" href="cant3.html" tabindex="-1">CANTIQUE 3</a></li>
+            <li role="none"><a role="menuitem" href="cant4.html" tabindex="-1">CANTIQUE 4</a></li>
+            <li role="none"><a role="menuitem" href="cant5.html" tabindex="-1">CANTIQUE 5</a></li>
+            <li role="none"><a role="menuitem" href="cant6.html" tabindex="-1">CANTIQUE 6</a></li>
+            <li role="none"><a role="menuitem" href="cant7.html" tabindex="-1">CANTIQUE 7</a></li>
+          </ul>
+        </div>
+      </li> -->
+        <li role="none" class="search-container">
+          <div class="search-box">
+            <input
+              type="number"
+              id="cantique-search"
+              placeholder="Rechercher un cantique..."
+              min="1"
+            />
+            <button id="search-btn">
+              <i class="fas fa-search"></i>
+            </button>
+          </div>
+        </li>
+      </ul>
+    </nav>
+
+    <main>
+      <div class="scrolling-container" id="scrolling-container">
+        <section style="margin-top: 2%" class="active">
+          <div class="container" style="margin-top: 2%; font-weight: 900">
+            <h2>
+              <u>Cantique N°17</u> : <br />
+              Angeli wiwé le to ayajè. <br />
+              <u>Tonalité</u> : Eb
+            </h2>
+          </div>
+        </section>
+        <section style="margin-top: 2%">
+          <div class="container" style="margin-top: 2%; font-weight: 900">
+            <h2>
+              1. Angeli wiwé le to ayajè. Vivi we hàngbé yéton le. Whanpa' lon
+              ton le go n’ayajè. To jalé jona, miwule vè wé. G’alo na mi n’do
+              sen Wé. Na ’yajè m’ton n’fluso po yéton po. Na ’yajè m’ton n’fluso
+              po yéton po.
+            </h2>
+          </div>
+        </section>
+        <section style="margin-top: 2%">
+          <div class="container" style="margin-top: 2%; font-weight: 900">
+            <h2>
+              2. Yiseno agùn Wiwé ton le-emi. Zé gbé ayaje ton d’aga. Pe po yeyi
+              po we jè Kluno. Holu Nupopowànameto. Hun Klist ton ko su-aho lo.
+              Halleluyah n’azonjawu Eton. Halleluyah n’azonjawu Eton.
+            </h2>
+          </div>
+        </section>
+        <section style="margin-top: 2%">
+          <div class="container" style="margin-top: 2%; font-weight: 900">
+            <h2>
+              3. Ode te we sogan do dagb ’Eton. Le hlan ovi gbeto ton le. Klisti
+              ko kü na ylandòno le. Honton dodono we Ewo yin. E ma to na jo mi
+              do. Halleluyah n’azonjawu Eton. Halleluyah n’azonjawu Eton. (Nişe)
+            </h2>
+          </div>
+        </section>
+      </div>
+
+      <!-- Indicateur de progression -->
+      <div class="progress-indicator" id="progress-indicator"></div>
+
+      <!-- Boutons de navigation -->
+      <div class="navigation-buttons">
+        <button class="nav-btn" id="prevBtn" disabled>Précédent</button>
+        <button class="nav-btn" id="nextBtn">Suivant</button>
+      </div>
+    </main>
+    <script src="../script_essai.js"></script>
+  </body>
+</html>
