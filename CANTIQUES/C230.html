@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css"
+      integrity="sha512-DxV+EoADOkOygM4IR9yXP8Sb2qwgidEmeqAEmDKIOfPRQZOWbXCzLC6vjbZyy0vPisbH2SyW27+ddLVCN+OMzQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Cantiques des Chérubins Célestes - Navigation et consultation des cantiques"
+    />
+    <title>Les Chérubins Célestes - Cantique N°230</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="../style_essai.css" />
+    <style>
+      :root {
+        --primary-gradient: linear-gradient(
+          270deg,
+          #f72a7f,
+          #e09136,
+          #f56679,
+          #dd600c
+        );
+        --secondary-gradient: linear-gradient(135deg, #f72a7f, #e09136);
+        --text-light: #f3e9ff;
+        --text-dark: #260126;
+        --transition-normal: 0.3s ease;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav aria-label="Navigation principale">
+        <div class="nav-container">
+          <h1 class="logo">
+            <a
+              href="../FICHIER_SITE_ECC/index.html"
+              aria-label="Retour à l'accueil"
+              class="logo-link"
+            >
+              LES CHERUBINS CELESTES <span aria-hidden="true">(LCC)</span>
+            </a>
+          </h1>
+
+          <div class="nav-controls">
+            <!-- Bouton Accueil remplace la recherche -->
+            <a href="../index.html" class="home-btn" aria-label="Retour à l'accueil">
+              <i class="fas fa-home" aria-hidden="true"></i>
+              <span class="btn-text">ACCUEIL</span>
+            </a>
+          </div> 
+        </div>
+      </nav>
+    </header>
+
+    <main id="main-content">
+      <div
+        class="scrolling-container"
+        id="scrolling-container"
+        aria-live="polite"
+      >
+        <!-- Section 1: Titre du cantique -->
+        <section class="cantique-section active" aria-current="page">
+          <div class="container">
+            <article>
+              <header>
+                <h2 class="cantique-title">
+                  <span class="cantique-number" style="text-align: left"
+                    ><u>Cantique :</u> N°230</span
+                  >
+                  <span class="cantique-name">Emi Mimo sokale wa o</span>
+                </h2>
+                <p class="tonality" style="text-align: right">
+                  <strong><u>Tonalité :</u></strong>
+                  <span class="tonality-value">Eb</span>
+                </p>
+              </header>
+            </article>
+          </div>
+        </section>
+
+        <!-- Section 2: Première strophe -->
+        <section class="cantique-section">
+          <div class="container">
+            <article>
+              <div class="cantique-content">
+                <p class="strophe">
+                  1. Emi Mimo sokale wa o.<br />
+                  Ko wa fun wa lagbara.<br /><br />
+
+                  2. Jesu Oluwa o, sokale wa o<br />
+                  Ko wa fun wa lagbara.
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="cantique-section">
+          <div class="container">
+            <article>
+              <div class="cantique-content">
+                <p class="strophe">
+                  3. Adaba Mimo, sokale wa o.<br />
+                  Ko wa fun wa lagbara.<br /><br />
+
+                  4. Maleka Mimo, sokale wa o.<br />
+                  Ko wa fun wa lagbara.
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="cantique-section">
+          <div class="container">
+            <article>
+              <div class="cantique-content">
+                <p class="strophe">
+                  5. Ogun orun Mimo, sokale wa o.<br />
+                  Ko wa fun wa lagbara.<br /><br />
+
+                  6. Emi Mimo, sokale wa o.<br />
+                  Ko wa fun wa lagbara. (Amin)
+                </p>
+              </div>
+            </article>
+          </div>
+        </section>
+      </div>
+
+      <!-- Indicateur de progression amélioré -->
+      <div
+        class="progress-indicator"
+        id="progress-indicator"
+        aria-label="Progression de lecture"
+      >
+        <!-- Les points seront générés par JavaScript -->
+      </div>
+
+      <!-- Boutons de navigation -->
+      <div class="navigation-buttons">
+        <button
+          class="nav-btn"
+          id="prevBtn"
+          disabled
+          aria-label="Cantique précédent"
+        >
+          <i class="fas fa-chevron-left" aria-hidden="true"></i>
+        </button>
+        <span class="current-position" id="current-position" aria-live="polite">
+          <span id="current-page">1</span> / <span id="total-pages">4</span>
+        </span>
+        <button class="nav-btn" id="nextBtn" aria-label="Cantique suivant">
+          <i class="fas fa-chevron-right" aria-hidden="true"></i>
+        </button>
+      </div>
+    </main>
+
+    <script src="../script_essai.js"></script>
+  </body>
+</html>
