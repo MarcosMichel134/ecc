@@ -1,58 +1,44 @@
-/* Styles pour la barre de recherche */
-.search-container {
-  display: flex;
-  align-items: center;
+/* Variables CSS */
+:root {
+  --primary-gradient: linear-gradient(
+    270deg,
+    #f72a7f,
+    #e09136,
+    #f56679,
+    #dd600c
+  );
+  --secondary-gradient: linear-gradient(135deg, #f72a7f, #e09136);
+  --text-light: #f3e9ff;
+  --text-dark: #260126;
+  --bg-overlay: rgba(255 255 255 / 0.15);
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  --shadow-light: 0 0 5px rgba(255 255 255 / 0.2);
+  --shadow-heavy: 0 0 12px #fff, 0 0 20px #4a00e0;
 }
 
-.search-box {
-  display: flex;
-  align-items: center;
-  background: rgba(255 255 255 / 0.15);
-  border-radius: 0.5rem;
-  border: 2px solid transparent;
-  box-shadow: 0 0 5px rgba(255 255 255 / 0.2);
+/* Reset et utilitaires */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
   overflow: hidden;
-  transition: all 0.3s ease;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
-.search-box:focus-within {
-  background: rgba(255 255 255 / 0.5);
-  border-color: #fff;
-  box-shadow: 0 0 12px #fff, 0 0 20px #4a00e0;
-}
-
-#cantique-search {
-  background: transparent;
-  border: none;
-  padding: 0.7rem 1rem;
-  color: #f3e9ff;
-  font-weight: 600;
-  width: 180px;
-  outline: none;
-  font-size: 2rem;
-}
-
-#cantique-search::placeholder {
-  color: rgba(243, 233, 255, 0.7);
-}
-
-#search-btn {
-  background: transparent;
-  border: none;
-  padding: 0.65rem 1rem;
-  color: #f3e9ff;
-  cursor: pointer;
-  transition: color 0.3s ease;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-#search-btn:hover {
-  color: #4a00e0;
-}
-
-/* Custom gradient background animation for navbar */
+/* Animations */
 @keyframes shiny-gradient {
   0% {
     background-position: 0% 50%;
@@ -65,331 +51,574 @@
   }
 }
 
-* {
-  font-family: Helvetica, sans-serif;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
+/* Styles généraux */
 body {
-  background-size: 700% 700%;
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
   animation: shiny-gradient 15s ease infinite;
   min-height: 100vh;
   margin: 0;
-  color: #eee;
-  overflow: hidden; /* Empêche le défilement traditionnel */
-}
-
-nav {
-  background: linear-gradient(270deg, #f72a7f, #e09136, #f56679, #dd600c);
-  background-size: 800% 800%;
-  animation: shiny-gradient 20s ease infinite;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  backdrop-filter: saturate(180%) blur(10px);
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  height: 90px;
-  display: flex;
-  justify-content: space-between;
-  padding: 0 5%;
-  border-radius: 0 0 20px 20px;
-}
-
-nav .logo {
-  font-size: 30px;
-  font-weight: 900;
-  margin-top: 25px;
-}
-
-nav span {
-  color: blue;
-}
-nav ul {
-  display: flex;
-  justify-content: center;
-  padding: 1rem 0;
-  margin: 0;
-  list-style-type: none;
-  flex-wrap: wrap;
-  gap: 100px;
-}
-
-nav ul li {
-  position: relative;
-}
-
-nav ul li a {
-  display: flex;
-  padding: 0.65rem 1.5rem;
-  font-weight: 600;
-  color: #f3e9ff;
-  background: rgba(255 255 255 / 0.15);
-  border-radius: 0.5rem;
-  border: 2px solid transparent;
-  text-shadow: 0 0 10px rgba(255 255 255 / 0.4);
-  box-shadow: 0 0 5px rgba(255 255 255 / 0.2);
-  background-color: 0.3s ease;
-  border-color: 0.3s ease;
-  color: 0.3s ease;
-  box-shadow: 0.3s ease;
-  user-select: none; 
-  text-decoration : none;
-  font-size : 30px;
-}
-
-nav ul li a:hover,
-nav ul li a:focus {
-  background: rgba(255 255 255 / 0.5);
-  border-color: #fff;
-  color: #4a00e0;
-  box-shadow: 0 0 12px #fff, 0 0 20px #4a00e0;
-  outline: none;
-}
-
-nav ul li a:active {
-  background: #fff;
-  color: #260126;
-  box-shadow: none;
-}
-
-.dropdown_menu {
-  display: none;
-}
-
-nav ul li:hover .dropdown_menu {
-  display: block;
-  position: absolute;
-  left: 0;
-  top: 100%;
-  background: linear-gradient(270deg, #f72a7f, #e09136, #f56679, #dd600c);
-  background-size: 800% 800%;
-  animation: shiny-gradient 20s ease infinite;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  backdrop-filter: saturate(180%) blur(10px);
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  padding: 0 10px;
-  border-radius: 10px;
-}
-nav ul li:hover .dropdown_menu ul {
-  display: block;
-  margin: 5px;
-}
-
-nav ul li:hover .dropdown_menu ul li {
-  padding: 5px 0;
-}
-
-/* Main content style for demonstration */
-main {
-  position: relative;
-  width: 100%;
-  height: calc(100vh - 90px); /* Hauteur totale moins la navbar */
+  color: var(--text-light);
   overflow: hidden;
 }
 
-/* main::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: url("lcc.jpg") center/cover no-repeat;
-      transform: scale(1); 
-      z-index: -1;
-    }*/
+/* Navigation améliorée */
+header {
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
 
-/* Styles pour le défilement progressif */
+nav {
+  background: var(--primary-gradient);
+  background-size: 800% 800%;
+  animation: shiny-gradient 20s ease infinite;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  padding: 0 5%;
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 90px;
+}
+
+/* Logo */
+.logo {
+  font-size: 28px;
+  font-weight: 900;
+  margin: 0;
+}
+
+.logo-link {
+  color: var(--text-light);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: color var(--transition-normal);
+}
+
+.logo-link:hover,
+.logo-link:focus {
+  color: #fff;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.7);
+}
+
+.logo span {
+  color: #4a8cff;
+  font-size: 22px;
+}
+
+/* Contrôles de navigation */
+.nav-controls {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+/* Bouton Accueil */
+.home-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--bg-overlay);
+  border-radius: 50px;
+  padding: 12px 25px;
+  color: var(--text-light);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 16px;
+  border: 2px solid transparent;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-light);
+}
+
+.home-btn:hover,
+.home-btn:focus {
+  background: rgba(255 255 255 / 0.25);
+  border-color: var(--text-light);
+  color: #4a00e0;
+  box-shadow: var(--shadow-heavy);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+.home-btn:active {
+  transform: translateY(1px);
+}
+
+.home-btn .fa-home {
+  font-size: 18px;
+}
+
+.home-btn .btn-text {
+  white-space: nowrap;
+}
+
+/* Contenu principal */
+main {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 90px);
+  overflow: hidden;
+}
+
+/* Container de défilement */
 .scrolling-container {
   position: relative;
   width: 100%;
   height: 100%;
+  perspective: 1000px;
 }
 
-section {
+/* Sections de cantiques */
+.cantique-section {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 1200px;
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%) translateY(-50%) scale(0.95);
+  width: 90%;
+  max-width: 1200px;
+  padding: 20px;
   margin: 2rem auto 1rem auto;
   margin-top: 0px;
-  padding: 2px 1rem;
-  background: rgba(189, 181, 181, 0.6);
-  border-radius: 1rem;
-  box-shadow: 0 0 15px rgba(255 255 255 / 0.15);
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(20px);
+  border-radius: 30px;
+  box-shadow:
+    0 20px 40px rgba(0, 0, 0, 0.5),
+    0 0 50px rgba(255, 255, 255, 0.1);
   text-align: center;
-  font-size: 50px;
-  user-select: none;
   opacity: 0;
-  transform: translateY(30px);
-  transition: opacity 0.8s ease, transform 0.8s ease;
-  left: 50%;
-  transform: translateX(-50%) translateY(30px);
+  visibility: hidden;
+  transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
   z-index: 1;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-section.active {
+.cantique-section.active {
   opacity: 1;
-  transform: translateX(-50%) translateY(0);
+  visibility: visible;
+  transform: translateX(-50%) translateY(-50%) scale(1);
   z-index: 2;
 }
 
-section.previous {
-  opacity: 0;
-  transform: translateX(-50%) translateY(-30px);
+.cantique-section.previous {
+  opacity: 0.3;
+  transform: translateX(-50%) translateY(-50%) scale(0.9) translateX(-100px);
   z-index: 1;
 }
 
-section .container h2, section .container h3, section .container h4 {
-  color : black; 
-  font-size : 50px;
+.cantique-section.next {
+  opacity: 0.3;
+  transform: translateX(-50%) translateY(-50%) scale(0.9) translateX(100px);
+  z-index: 1;
 }
 
-/* Indicateur de progression */
+/* Titre du cantique */
+.cantique-title {
+  font-size: 3.125rem;
+  margin-bottom: 20px;
+  color: #fff;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  font-weight: 900;
+}
+
+.cantique-number {
+  display: block;
+  font-size: 3.125rem;
+  color: #ffd700;
+  margin-bottom: 10px;
+  font-weight: 900;
+}
+
+.cantique-name {
+  display: block;
+  font-size: 3.125rem;
+  color: #a8e6cf;
+  font-style: italic;
+  font-weight: 900;
+}
+
+.tonality {
+  font-size: 3.125rem;
+  color: #ff9a8b;
+  margin-bottom: 30px;
+  font-weight: 900;
+}
+
+.tonality-value {
+  font-weight: 900;
+  color: #ff6b6b;
+}
+
+/* Contenu du cantique */
+.cantique-content {
+  font-size: 3.125rem;
+  line-height: 1.5;
+  text-align: center;
+  color: #e0e0e0;
+  font-weight: 900;
+}
+
+.strophe {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+.refrain {
+  background: rgba(255, 215, 0, 0.1);
+  padding: 20px;
+  border-radius: 15px;
+  border-left: 4px solid #ffd700;
+  margin-top: 10px;
+}
+
+.refrain-title {
+  color: #ffd700;
+  font-size: 3.125rem;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Indicateur de progression amélioré */
 .progress-indicator {
   position: fixed;
-  right: 20px;
+  right: 30px;
   top: 50%;
   transform: translateY(-50%);
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  z-index: 100;
+  gap: 15px;
+  z-index: 1000;
 }
 
 .progress-dot {
-  width: 12px;
-  height: 12px;
+  width: 16px;
+  height: 16px;
   border-radius: 50%;
-  background-color: rgba(255, 255, 255, 0.5);
+  background: var(--bg-overlay);
   cursor: pointer;
-  transition: background-color 0.3s, transform 0.3s;
+  transition: all var(--transition-normal);
+  border: 2px solid transparent;
+  position: relative;
+}
+
+.progress-dot:hover {
+  transform: scale(1.3);
+  background: rgba(255, 255, 255, 0.8);
+  border-color: var(--text-light);
 }
 
 .progress-dot.active {
-  background-color: white;
-  transform: scale(1.3);
+  background: white;
+  transform: scale(1.5);
+  border-color: white;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.8);
 }
 
-/* Boutons de navigation */
+.progress-dot::after {
+  content: attr(data-title);
+  position: absolute;
+  right: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-size: 14px;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal);
+  font-weight: 500;
+}
+
+.progress-dot:hover::after {
+  opacity: 1;
+}
+
+/* Boutons de navigation améliorés */
 .navigation-buttons {
   position: fixed;
-  bottom: 30px;
+  bottom: 20px;
   left: 50%;
   transform: translateX(-50%);
   display: flex;
-  gap: 200px;
-  z-index: 100;
+  align-items: center;
+  gap: 150px;
+  z-index: 1000;
+  background: rgba(0, 0, 0, 0.5);
+  padding: 10px 30px;
+  border-radius: 50px;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .nav-btn {
-  padding: 12px 30px;
-  background: linear-gradient(135deg, #f72a7f, #e09136);
+  padding: 15px 35px;
+  background: var(--secondary-gradient);
   color: white;
   border: none;
   border-radius: 50px;
   font-size: 18px;
   font-weight: bold;
   cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: all var(--transition-normal);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+  min-width: 150px;
+  justify-content: center;
 }
 
-.nav-btn:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+.nav-btn:hover:not(:disabled),
+.nav-btn:focus:not(:disabled) {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
 }
 
-.nav-btn:active {
+.nav-btn:active:not(:disabled) {
   transform: translateY(1px);
 }
 
 .nav-btn:disabled {
-  background: rgba(255, 255, 255, 0.3);
-  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.5);
   cursor: not-allowed;
   transform: none;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
-.instructions {
-  position: fixed;
-  bottom: 90px;
-  left: 50%;
-  transform: translateX(-50%);
-  background: rgba(0, 0, 0, 0.7);
+.current-position {
   color: white;
-  padding: 10px 20px;
-  border-radius: 20px;
-  font-size: 14px;
+  font-size: 18px;
+  font-weight: bold;
+  min-width: 60px;
   text-align: center;
-  z-index: 100;
+  text-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
 }
 
-/* Responsive wrapping for smaller screens */
-@media (max-width: 768px) {
-  nav .logo {
-    font-size: 14px;
-    margin-top: 20px;
+/* Focus accessible */
+:focus-visible {
+  outline: 3px solid #4a8cff;
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+/* Réduction des animations si préféré */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
-  nav ul {
+
+  .cantique-section {
+    transition: none !important;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .cantique-section {
+    width: 95%;
+    padding: 30px;
+  }
+
+  .cantique-title {
+    font-size: 2.5rem;
+  }
+
+  .cantique-content {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-container {
+    flex-direction: column;
+    height: auto;
+    padding: 15px 0;
+    gap: 15px;
+  }
+
+  .logo {
+    font-size: 24px;
+    text-align: center;
+  }
+
+  .logo span {
+    font-size: 18px;
+  }
+
+  .nav-controls {
+    width: 100%;
     justify-content: center;
   }
-  nav ul li a {
-    padding: 0.15rem 0.5rem;
-    font-size: 0.6rem;
-  }
-  section {
-    width: 360px;
-    /*font-size: 20px;*/
-  }
-  section .container {
-    width: 345px;
-  }
-  section .container h1 {
-    font-size : 15px;
-    margin-bottom: 15px;
-  }
-section .container h2,
-  section .container h3 {
-    font-size: 20px;
-    margin-bottom: 15px;
-  }
-  .progress-indicator {
-    right: 10px;
-  }
-  .instructions {
-    font-size: 12px;
-    width: 90%;
-    bottom: 80px;
-  }
-  .navigation-buttons {
-    bottom: 20px;
-  }
-  .nav-btn {
+
+  .home-btn {
     padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  /*.home-btn .btn-text {
+    display: none;  Cacher le texte sur mobile 
+  }*/
+
+  .home-btn .fa-home {
+    font-size: 20px;
+  }
+
+  main {
+    height: calc(100vh - 140px);
+  }
+
+  .cantique-section {
+    padding: 20px;
+    width: 98%;
+  }
+
+  .cantique-title {
+    font-size: 1.8rem;
+  }
+
+  .cantique-number {
+    font-size: 2rem;
+  }
+
+  .cantique-name {
+    font-size: 3rem;
+  } 
+
+  .tonality {
+    font-size: 2rem;
+  }
+
+  .cantique-content {
+    font-size: 1.6rem;
+  }
+
+  .progress-indicator {
+    right: 15px;
+    gap: 10px;
+  }
+
+  .progress-dot {
+    width: 12px;
+    height: 12px;
+  }
+
+  .navigation-buttons {
+    gap: 80px;
+    padding: 8px 20px;
+    bottom: 15px;
+  }
+
+  .nav-btn {
+    min-width: 50px;
+    padding: 12px;
     font-size: 16px;
+  }
+
+  .nav-btn i {
+    font-size: 20px;
   }
 }
 
-/* Styles responsifs pour la barre de recherche */
-@media (max-width: 768px) {
-  .search-box {
-    width: 150px;
+@media (max-width: 480px) {
+  .logo {
+    font-size: 20px;
   }
 
-  #cantique-search {
-    width: 100px;
-    padding: 0.15rem 0.5rem;
-    font-size: 0.6rem;
+  .home-btn {
+    padding: 8px 16px;
   }
 
-  #search-btn {
-    padding: 0.15rem 0.5rem;
+  .cantique-section {
+    padding: 15px;
   }
 
-  #cantique-search::placeholder {
-    font-size: 0.6rem;
-  } 
-  nav ul {
-  gap: 1rem;
+  .cantique-title {
+    font-size: 1.5rem;
+  }
+
+  .cantique-number {
+    font-size: 1.8rem;
+  }
+
+  .cantique-name {
+    font-size: 1.3rem;
+  }
+
+  .cantique-content {
+    font-size: 1.4rem;
+  }
+
+  .progress-indicator {
+    display: none; /* Cacher sur très petits écrans */
+  }
+
+  .navigation-buttons {
+    gap: 50px;
+    padding: 6px 15px;
+  }
+
+  .nav-btn {
+    min-width: 40px;
+    padding: 10px;
+    font-size: 14px;
+  }
+
+  .nav-btn i {
+    font-size: 18px;
+  }
+
+  .current-position {
+    font-size: 14px;
+    min-width: 40px;
+  }
+}
+
+/* Mode contraste élevé */
+@media (prefers-contrast: high) {
+  body {
+    background: #000;
+  }
+
+  .cantique-section {
+    background: #000;
+    border: 3px solid #fff;
+  }
+
+  .refrain {
+    background: #111;
+    border-left: 4px solid #ff0;
+  }
+
+  .home-btn {
+    background: #000;
+    border: 2px solid #fff;
+    color: #fff;
   }
 }
