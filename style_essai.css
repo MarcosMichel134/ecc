@@ -360,7 +360,7 @@ section .container h4 {
   }
   section .container h2,
   section .container h3 {
-    font-size: 20px;
+    font-size: 35px;
     margin-bottom: 15px;
   }
   .progress-indicator {
